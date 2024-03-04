@@ -76,7 +76,7 @@ STCNVScore <- function(TumorST = TumorST,
 
   ## Plot CNV Label
   pdf(paste(OutDir, Sample, "_cnv_label.pdf", sep = ""), width = 7, height = 7)
-  p <- SpatialDimPlot(TumorST, group.by = "CNVLabel", cols = .cluster_cols, pt.size.factor = 1, alpha = 0.6) +
+  p <- SpatialDimPlot(TumorST, group.by = "CNVLabel", cols = .cluster_cols, pt.size.factor = 1.2, alpha = 1) +
     scale_fill_manual(values = .cluster_cols)
   print(p)
   dev.off()
