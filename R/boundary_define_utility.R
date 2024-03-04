@@ -54,7 +54,7 @@ compute_interspot_distances <- function(position, scale.factor = 1.05) {
 #'
 find_neighbors <- function(position, radius, method = c("manhattan", "euclidean")) {
   method <- match.arg(method)
-  pdist <- as.matrix(stats::dist(as.matrix(position[, c("imagecol", "imagerow")]), method = method))
+  pdist <- as.matrix(stats::dist(as.matrix(position[, c("col", "row")]), method = method))
   neighbors <- (pdist <= radius & pdist > 0) # <= less than or equal to;
   df_j2 <- sapply(seq_len(nrow(position)), function(x) as.vector(names(neighbors[x,])[which(neighbors[x,])]))
   names(df_j2) <- rownames(position)
